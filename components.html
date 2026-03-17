@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library — Design System</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .demo-section {
+      padding: 3rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .demo-section:last-child { border-bottom: none; }
+    .demo-label {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .demo-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+    .demo-class {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 0.2em 0.5em;
+      border-radius: var(--radius-sm);
+      margin-left: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">signal<span>.</span>ai</a>
+  <nav>
+    <a href="index.html">Artikels</a>
+    <a href="#">Over</a>
+  </nav>
+</header>
+
+<div class="page-wrapper">
+
+  <a href="index.html" class="back-link">Terug naar overzicht</a>
+
+  <article class="artikel">
+    <h1>Component Library</h1>
+    <p class="meta">Design System — Alle beschikbare bouwstenen</p>
+
+    <div class="inhoud">
+
+      <!-- ── TYPOGRAFIE ───────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Typografie</p>
+
+        <h2>Hoofdsectie titel <span class="demo-class">h2</span></h2>
+        <h3>Subsectie titel <span class="demo-class">h3</span></h3>
+        <p>Gewone paragraaf tekst. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Gebruik <strong>strong voor nadruk</strong> en <em>em voor nuance of toon</em>. Links zien er zo uit: <a href="#">een voorbeeld link</a>.</p>
+      </div>
+
+      <!-- ── QUOTE ────────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Quote <span class="demo-class">blockquote.quote</span></p>
+
+        <blockquote class="quote">
+          <p>De echte doorbraak van AI is niet dat machines slimmer worden, maar dat we eindelijk leren welke vragen de moeite waard zijn om te stellen.</p>
+          <cite>— Jensen Huang, NVIDIA CEO</cite>
+        </blockquote>
+
+        <p>Gebruik voor impactvolle citaten, kernconclusies of uitspraken van experts. Maximaal één per sectie.</p>
+      </div>
+
+      <!-- ── LISTS ────────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Ongeordende lijst <span class="demo-class">ul.lijst</span></p>
+
+        <ul class="lijst">
+          <li>Geschikt voor korte, gelijkwaardige items zonder volgorde</li>
+          <li>Elke bullet is een visueel scheidingsteken — gebruik spaarzaam</li>
+          <li>Maximaal 5 à 6 items, anders beter een sectie met h3-kopjes</li>
+        </ul>
+
+        <p class="demo-label" style="margin-top:2rem">Genummerde lijst <span class="demo-class">ol.lijst</span></p>
+
+        <ol class="lijst">
+          <li>Voor reeksen waarbij volgorde telt maar de stappen kort zijn</li>
+          <li>Rangordes, top-lijsten, chronologische opsommingen</li>
+          <li>Niet voor processen met uitleg — gebruik dan ol.stappen</li>
+        </ol>
+      </div>
+
+      <!-- ── STAPPEN ──────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Stappen <span class="demo-class">ol.stappen</span></p>
+
+        <ol class="stappen">
+          <li>
+            <div>
+              <strong>Model selecteren</strong>
+              <p>Kies het juiste model op basis van de taak: reasoning, snelheid of multimodaliteit.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Context aanleveren</strong>
+              <p>Structureer de systeemprompt met duidelijke rollen, beperkingen en outputformaat.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <strong>Output valideren</strong>
+              <p>Implementeer deterministische checks voor kritieke outputs zoals code of structuurdata.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- ── CARDS ────────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Cards grid <span class="demo-class">.cards > .card</span></p>
+
+        <div class="cards">
+          <div class="card">
+            <p class="card-label">Model</p>
+            <p class="card-title">GPT-4o</p>
+            <p>Sterk in redeneren en multimodale taken. Meest veelzijdig voor productietoepassingen.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">Model</p>
+            <p class="card-title">Claude 3.5</p>
+            <p>Uitstekend voor lange context en nauwkeurige instructieopvolging bij complexe taken.</p>
+          </div>
+          <div class="card">
+            <p class="card-label">Model</p>
+            <p class="card-title">Gemini 1.5</p>
+            <p>Exceptioneel lange contextvenster — tot 1 miljoen tokens voor documentanalyse.</p>
+          </div>
+        </div>
+
+        <p>Gebruik cards wanneer items meerdere eigenschappen hebben of een duidelijke identiteit. Niet voor eenvoudige opsommingen.</p>
+      </div>
+
+      <!-- ── TABEL ────────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Datatabellen <span class="demo-class">table.tabel</span></p>
+
+        <table class="tabel">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Context</th>
+              <th>Sterktes</th>
+              <th>Prijs / 1M tokens</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>GPT-4o</strong></td>
+              <td>128K</td>
+              <td>Redeneren, vision, functie-aanroepen</td>
+              <td>$5 input / $15 output</td>
+            </tr>
+            <tr>
+              <td><strong>Claude 3.5 Sonnet</strong></td>
+              <td>200K</td>
+              <td>Lange context, instructieopvolging</td>
+              <td>$3 input / $15 output</td>
+            </tr>
+            <tr>
+              <td><strong>Gemini 1.5 Pro</strong></td>
+              <td>1M</td>
+              <td>Mega-context, multimodaal</td>
+              <td>$3.50 input / $10.50 output</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Gebruik tabellen voor vergelijkbare data met meerdere attributen. Minimaal 3 rijen, minimaal 3 kolommen.</p>
+      </div>
+
+      <!-- ── HIGHLIGHT ─────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Highlight / callout <span class="demo-class">.highlight</span></p>
+
+        <div class="highlight">
+          <p class="highlight-label">Kernpunt</p>
+          <p>Context engineering is inmiddels een volwaardig vakgebied. De kwaliteit van je systeemprompt bepaalt meer dan 60% van de uiteindelijke outputkwaliteit — meer dan de modelkeuze zelf.</p>
+        </div>
+
+        <p>Gebruik voor definities, waarschuwingen, TL;DR-samenvattingen of kernpunten die de lezer niet mag missen.</p>
+      </div>
+
+      <!-- ── STATS ────────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Statistieken <span class="demo-class">.stats > .stat</span></p>
+
+        <div class="stats">
+          <div class="stat">
+            <p class="stat-value">$184B</p>
+            <p class="stat-label">AI marktwaarde 2024</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value">37%</p>
+            <p class="stat-label">Jaarlijkse groei</p>
+          </div>
+          <div class="stat">
+            <p class="stat-value">1.8M</p>
+            <p class="stat-label">AI-gerelateerde jobs</p>
+          </div>
+        </div>
+
+        <p>Gebruik voor 2 tot 4 cijfers die samen een beeld vormen. Altijd vergezeld van context in de paragraaf erna.</p>
+      </div>
+
+      <!-- ── CODE ─────────────────────────── -->
+      <div class="demo-section">
+        <p class="demo-label">Code <span class="demo-class">code / pre</span></p>
+
+        <p>Inline code: <code>model="claude-3-5-sonnet"</code> wordt gebruikt binnen een zin wanneer je technische termen, parameters of commando's vermeldt.</p>
+
+        <pre><code>const response = await fetch("https://api.anthropic.com/v1/messages", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    model: "claude-3-5-sonnet-20241022",
+    max_tokens: 1024,
+    messages: [{ role: "user", content: prompt }]
+  })
+});</code></pre>
+      </div>
+
+    </div>
+  </article>
+</div>
+
+<footer class="site-footer">
+  signal.ai — Design System v1.0
+</footer>
+
+</body>
+</html>
